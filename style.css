@@ -1,0 +1,168 @@
+#my_dataviz, #svganchor {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 400px;
+  }
+
+#my_dataviz svg {
+  width: 100%;
+}
+
+.lineChartElement.active {
+  stroke-width: 5px;
+  }
+#tooltip {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  font-size: 12px;
+  background: #fff;
+  border-radius: 7px;
+  padding: 8px;
+  margin: 6px auto;
+  text-align: left;
+  color: #333;
+  white-space: normal;
+  max-width: 250px;
+  border: 2px solid #763f60;
+}
+
+#tooltip p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  text-align: left;
+}
+
+#tooltip h3 {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.keyBlock {
+  display: flex;
+  padding-bottom: 10px;
+  margin-right: 30%;
+}
+
+.keyBlockSub {
+  display: flex;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.keyBlockYes {
+    width: 12px;
+    height: 12px;
+    background-color: rgb(136, 134, 78);
+    margin-right: 5px;
+    margin-top: 0px;
+}
+
+.tableCountry {
+  display: flex;
+  justify-content: space-between;
+  line-height: 15.8px;
+  padding-left: 4px;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.tableCountry.wave2 {
+  background-color: #ddcbd6;
+}
+
+.tableCountry p {
+  width: 30px;
+  font-size: 12px;
+  margin: 0;
+  border-right: 1px dashed #000;
+}
+
+.tableCountry p:first-child {
+  width: 50%;
+  float: left;
+  margin-bottom: 3.8px;
+  text-align: right;
+  padding-right: 8px;
+  border-right: 1px dashed #333;
+}
+
+.tableCountry p:not(:first-child) {
+  width: calc(50% / 2); /* 60% divided by 4 elements */
+  float: left;
+  margin: 0%; /* 2.5% margin on both sides */
+  text-align: center;
+  padding-left: 10px;
+  margin-top: 4px;
+}
+
+#graphContainer {
+  position: relative;
+  background-color: white;
+  border: 1px solid #333;
+  box-shadow: inset 0 2 2px #4f4f4f;
+}
+
+#datavizCopy {
+  position: absolute;
+  top: 0;
+  left: -240%;
+  z-index: 1;
+  max-height: 420px;
+  width: 100%;
+  background-color: #f6f6f6;
+  border: 1px solid #607d8b;
+  overflow-y: hidden;
+}
+
+#datavizCopy #tableHeader {
+  background-color: #f6f6f6;
+  border-bottom: 2px solid #607d8b;
+  z-index: 2;
+}
+
+#datavizCopy #tableContent {
+  overflow-y: scroll;
+  max-height: 355px; /* Adjusted for header height */
+}
+
+.tableCountry:first-of-type p {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column-reverse;
+  line-height: 13px;
+}
+
+/* add in the media query for desktop */
+@media only screen and (min-width: 768px) {
+  #graphContainer {
+      max-width: 740px;
+    }
+}
+
+/* add in the media query for desktop */
+@media only screen and (min-width: 1068px) {
+  #graphContainer{
+        max-width: 800px;
+    }
+}
+
+#xAxisDiv {
+  width: 100%;
+  background-color: #f6f6f6;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+  border-left: 1px solid #333;
+}
+
+.readingAchievement #xAxis2 .tick:first-of-type {
+  display: none;
+}
+
+.readingAchievement .domain {
+  opacity: 0;
+}
+
+#xAxis2 .domain {
+    display: none;
+}

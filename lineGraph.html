@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="lineGraph.css" rel="stylesheet" type="text/css" />
+  <link href="navbar.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="bodyContent trendPlots">
+    <div class="bodyContentIntro">
+      <h2>PIRLS 2021</h2>
+      <h3 class="bodyContentSubhead">Trend Plots of Average Reading Achievement</h3>
+      <h3>Created by the <a href="https://timssandpirls.bc.edu/">Boston College TIMSS & PIRLS</a> team</h3>
+      <p>This exhibit displays changes in achievement for all PIRLS 2021 participants with data from previous PIRLS
+        assessments. Exhibits 2.1.2 and 2.2.2 provide details, including statistical significance. See Appendix A for
+        country participation in previous assessments
+      </p>
+      <!-- Load d3.js -->
+      <h3 id="graphTitle" class="graphTitle"><b>Exhibit 2.1 - 2.2: Trend Plots of Average Reading Achievement</b></h3>
+      <script src="https://d3js.org/d3.v4.js"></script>
+
+      <div class="modalContent">
+        <img src="https://html-css-js.jadesign.repl.co/data/trend_key.svg" alt="SVG Image">
+      </div>
+
+      <button id="downloadButton1">Download Graph as PNG</button>
+      <div class="modal__text graphHeaderBox">
+        <div style="border-right: 1px dashed #333;">
+          <div class="keyBlockSub">
+            <div class="keyBlockYes" style="background-color: #7D2E2A;"></div>
+            <div>Assessed Fourth Grade Students at the End of the School Year</div>
+          </div>
+          <div class="keyBlockSub">
+            <div class="keyBlockYes">⋈</div>
+            <div>Assessed One Year Later Than Originally Scheduled – six year trend from PIRLS 2016</div>
+          </div>
+          <div class="keyBlockSub">
+            <div class="keyBlockYes" style="background-color: #E3CBCB;"></div>
+            <div>Delayed Assessment of Fourth Grade Cohort at the Beginning of Fifth Grade</div>
+          </div>
+        </div>
+        <div class="formsContainer">
+          <!-- Create the a dropdown menu that will allow you to select certain countries -->
+          <div id="searchBarSelectorContainer">
+            <input id="searchBarSelector" type="text" name="search" placeholder="Search for a country"
+              autocomplete="off" />
+            <!-- Results container -->
+            <div id="resultsSelector"></div>
+          </div>
+          <!-- Create the a dropdown menu that will allow you to select certain countries -->
+          <div id="searchBarResultsContainer">
+            <div id="searchBarResults"></div>
+          </div>
+          <!-- Create a 'Sort By' dropdown that will be used to sort the graph -->
+          <select id="sortDropdown" class="dropdownMenu" placeholder="Search for country" name="sortBy">
+            <option selected value="country">Sort By: Name (Alphabetical)</option>
+            <option value="2001">Sort By: 2001</option>
+            <option value="2006">Sort By: 2006</option>
+            <option value="2011">Sort By: 2011</option>
+            <option value="2016">Sort By: 2016</option>
+            <option value="2021">Sort By: 2021</option>
+          </select>
+          <!-- Create a 'Sort Order' dropdown that will be used to sort the graph -->
+          <select id="orderDropdown" class="dropdownMenu" name="sortOrder">
+            <option value="asc">Lowest first</option>
+            <option value="desc">Highest first</option>
+          </select>
+          <!-- Create the delayed assessment checkboxes -->
+          <div id="assessmentCheckbox" style="display: flex;">
+            <input type="checkbox" id="option1" name="option1" value="Option1" checked>
+            <label for="option1"> Assessed Fourth Grade Students at the End of the School Year</label><br>
+
+            <input type="checkbox" id="option2" name="option2" value="Option2" checked>
+            <label for="option2"> Delayed Assessment at Beginning of Fifth Grade
+            </label><br>
+          </div>
+          <text id="infoText" style="display: none;">*Some countries are hidden due to not having data for the selected
+            year</text>
+        </div>
+      </div>
+
+      <!-- Create a graph container that will be used to place the graph -->
+      <!-- Create a div where the graph will take place -->
+      <div id="graphContainer">
+      </div>
+      <div id="svganchorContainer">
+      <div id="svganchor" class="graphic" role="img" class="graph centered">
+        <div id="benchmark-line"></div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script type="module" src="https://html-css-js.jadesign.repl.co/lineGraph.js"></script>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="navbar.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="gridContainer">
+  <div class="bodyContent readingAchievement">
+    <div class="bodyContentIntro">
+      <h2>PIRLS 2021</h2>
+      <h3 class="bodyContentSubhead">Percentage of Students Reaching International Benchmarks</h3>
+      <h3>Created by the <a href="https://timssandpirls.bc.edu/">Boston College TIMSS & PIRLS</a> team</h3>
+      <p>PIRLS 2021 results provide descriptions of students’ reading skills and strategies at four international
+        benchmarks on the PIRLS reading achievement scale for meaningful interpretation of reading achievement
+        scores.The PIRLS 2021 International Benchmarks build on each other, representing increasingly demanding reading
+        comprehension skills and strategies with each higher benchmark—Low, Intermediate, High, and Advanced. The
+        students who reached a benchmark also reached all previous benchmark(s).</p>
+      <!-- Load d3.js -->
+      <script src="https://d3js.org/d3.v4.js"></script>
+
+      <!-- Create a graph container that will be used to place the graph -->
+
+      <!-- Create a div where the graph will take place -->
+      <h3 id="graphTitle" class="graphTitle"><b>Exhibit 4.2: Percentages of Students Reaching the PIRLS International
+          Benchmarks</b>
+      </h3>
+
+      <div class="modalContentGroup">
+        <div class="modalContent">
+          <img src="https://html-css-js.jadesign.repl.co/data/benchmark_key.svg" alt="SVG Image">
+        </div>
+
+        <button id="sidePanelButton">Show Numerical Results</button>
+        <button id="downloadButton1">Download Graph as PNG</button>
+        <div class="modal__text graphHeaderBox">
+          <div style="border-right: 1px dashed #333;">
+            <div class="keyBlockSubhead"></div>
+            <div class="keyBlockSub">
+              <div>Assessed Fourth Grade Students at the End of the School Year</div>
+            </div>
+            <div class="keyBlockSub">
+              <div>⋈ Assessed One Year Later Than Originally Scheduled</div>
+            </div>
+            <div class="keyBlockSub">
+              <div class="keyBlockYes" style="background-color: #E9CBCC; border: 1px solid #b39595;"></div>
+              <div>Delayed Assessment of Fourth Grade Cohort at the Beginning of Fifth Grade</div>
+            </div>
+          </div>
+          <div class="formsContainer">
+            <div id="searchBarSelectorContainer">
+              <input id="searchBarSelector" type="text" name="search" placeholder="Search for a country"
+                autocomplete="off" />
+              <!-- Results container -->
+              <div id="resultsSelector"></div>
+            </div>
+            <!-- Create the a dropdown menu that will allow you to select certain countries -->
+            <div id="searchBarResultsContaisuner">
+              <div id="searchBarResults"></div>
+            </div>
+
+            <div style="display: flex;">
+              <!-- Create a 'Sort By' dropdown that will be used to sort the graph -->
+              <div class="dropdownWrapper">
+                <select id="sortDropdown" class="dropdownMenu" placeholder="Search for country" name="sortBy">
+                  <option value="Country">Sort By: Name (Alphabetical)</option>
+                  <option selected value="advanced">Sort By: Advanced</option>
+                  <option value="high">Sort By: High</option>
+                  <option value="intermediate">Sort By: Intermediate</option>
+                  <option value="low">Sort By: Low</option>
+                </select>
+              </div>
+              <div class="dropdownWrapper">
+                <!-- Create a 'Sort Order' dropdown that will be used to sort the graph -->
+                <select id="orderDropdown" class="dropdownMenu" name="sortOrder">
+                  <option value="asc">Lowest first</option>
+                  <option selected value="desc">Highest first</option>
+                </select>
+              </div>
+            </div>
+            <!-- Create the delayed assessment checkboxes -->
+            <div id="assessmentCheckbox" style="display: flex;">
+              <input type="checkbox" id="option1" name="option1" value="Option1" checked>
+              <label for="option1"> Assessed at end of Fourth Grade</label><br>
+
+              <input type="checkbox" id="option2" name="option2" value="Option2" checked>
+              <label for="option2"> Delayed Assessment at Beginning of Fifth Grade
+              </label><br>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="graphContainer">
+        <div id="my_dataviz"></div>
+        <div id="datavizCopy">
+          <div id="tableHeader">
+            <div class="tableCountry" style="font-weight: bold;">
+              <p>Country</p>
+              <p>Advanced International Benchmark (625)</p>
+              <p>High International Benchmark (550)</p>
+              <p>Intermediate International Benchmark (475)</p>
+              <p>Low International Benchmark (400)</p>
+            </div>
+          </div>
+          <div id="tableContent">
+            <div id="columnTitles">
+              <!-- Your column titles here -->
+            </div>
+            <div id="dataContainer">
+              <!-- Your data will be appended here -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg id="xAxisDiv">
+      </svg>
+
+      <div class="formsContainer">
+      </div>
+    </div>
+
+
+    <!-- Create a tooltip that will appear on the hover of certain elements -->
+    <div id="tooltip" class="tooltip">
+    </div>
+  </div>
+  </div>
+  <script type="module" src="https://html-css-js.jadesign.repl.co/script.js"></script>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <!-- CDN for canvg -->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+</body>
+
+</html>

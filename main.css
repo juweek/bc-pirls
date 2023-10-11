@@ -1,0 +1,467 @@
+h2 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 17px;
+    margin-bottom: 0px;
+    font-weight: 700;
+    width: fit-content;
+    background-color: white;
+    padding: 4px 6px;
+    border: 1px solid #333;
+    border-radius: 3px;
+}
+
+/* add in the media query for desktop */
+@media only screen and (max-width: 728px) {
+  h2 {
+        font-size: 36px;
+    }
+}
+
+h3 {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 40px;
+}
+
+/* add in the media query for desktop */
+@media only screen and (min-width: 728px) {
+  h3 {
+        font-size: 16px;
+    }
+}
+
+h3 a {
+  font-weight: bold;
+  color: #000;
+  text-decoration: underline;
+  text-decoration-color: #c70000;
+}
+
+/*make hover set for h3 a*/
+h3 a:hover {
+  color: #c70000;
+}
+
+p, .modal__text, .chartTitleBackground {
+    font-family: 'PT Sans', sans-serif;
+  font-weight: 200;
+}
+
+body {
+  position: relative;
+  background-color: #fff;  
+  display: grid;
+  height: 100vh; /* Set body height to 100% of viewport height */
+  margin: 0; /* Remove default body margin */
+  /*allow scroll*/
+  overflow: auto;
+}
+
+body.sideNav {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  grid-gap: 20px; 
+}
+
+.bodyContent {
+  padding: 20px; /* Padding inside the .bodyContent */
+  box-sizing: border-box; /* Include padding and border in total size */
+   padding-bottom: 60px;
+}
+
+/* add in the media query for desktop */
+@media only screen and (min-width: 1068px) {
+  body.sideNav {
+   grid-template-columns: 1fr 3.5fr; /* This creates two columns with a 25% / 75% split */
+}
+}
+
+
+@media only screen and (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* add in the media query for desktop */
+@media only screen and (min-width: 768px) {
+  .bodyContent {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* add in the media query for desktop */
+@media only screen and (min-width: 1068px) {
+  .bodyContent {
+        max-width: 80%;
+    }
+}
+
+/* add in the media query for desktop */
+@media only screen and (min-width: 768px) {
+  .bodyContentIntro {
+        max-width: 640px;
+        margin: 0 auto;
+    }
+}
+
+/* add in the media query for desktop */
+@media only screen and (min-width: 1068px) {
+  .bodyContentIntro {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+}
+
+#searchBar {
+    width: 50%;
+    min-height: 30px;
+    max-height: 30px;
+}
+
+input, select {
+    min-height: 34px;
+    max-height: 34px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: #fff;
+    color:#393535;
+    margin-top: 6px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    max-width: 200px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:#393535;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:#393535;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color:#393535;
+}
+
+#searchBarSelectorContainer {
+    position: relative;
+    margin-bottom: 6px;
+  }
+  
+  /* Search input */
+  #searchBarSelector {
+    max-width: 260px;
+    min-width: 260px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin-bottom: 0px;
+    padding-left: 10px;
+    background-color: #fff;
+  }
+
+.dropdownWrapper {
+    position: relative;
+    display: inline-block; /* To fit the width of the child select */
+}
+  
+  /* Results dropdown */
+  #resultsSelector {
+    width: 320px;
+    background-color: #dfdfdf;
+    padding: 0px;
+    max-height: 120px;
+    overflow-y: scroll;
+  }
+
+  #resultsSelector button {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+    text-align: left;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-bottom: 6px;
+    margin-top: 4px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+  }
+
+  #resultsSelector button:hover {
+    background-color: #AA412F;
+    color: white;
+    cursor: pointer;
+  }
+
+  #resultsSelector .resultButtonSelected {
+    background-color: grey;
+    pointer-events: none;
+    opacity: .3;
+  }
+
+  #searchBarResults {
+    display: flex;
+    color: white;
+    flex-wrap: wrap;
+  }
+
+  #searchBarResults div {
+    padding: 5px;
+    color: #333;
+    border: 2px solid #AA412F;
+    border-radius: 20px;
+    background-color: #ebdedc;
+    text-align: left;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    max-width: fit-content;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+  }
+
+  #searchBarResults div:hover {
+    /* Add the styles you want to apply on hover here */
+    background-color: #b3b3b3; /* For example, change the background color */
+    color: #333; /* Change the text color, if needed */
+    border-color: #b3b3b3; /* Change the border color, if needed */
+    cursor: pointer;
+}
+
+#searchBarResults div::before {
+    content: '';  /* Set empty content */
+    display: inline-block;
+    margin-right: 5px;
+    width: 10px;
+    height: 10px;
+    margin-left: 3px;
+    margin-top: 4px;
+    border: 1px solid #000;
+    border-radius: 100px;
+    background-image: url('data/x-symbol.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+  .yAxisText {
+    font: 12px "PT Sans", sans-serif;
+  }
+
+  .resultButton.hidden {
+    display: none;
+  }
+
+.graphTitle {
+  font-size: 20px;
+  margin-bottom: 0px;
+  border-bottom: 1px dashed #333;
+  padding-bottom: 20px;
+}
+
+.graphSubtitle {
+  margin: 0px;
+}
+
+.tick text {
+  text-anchor: end;
+  transform: rotate(0deg);
+}
+
+
+.graphHeaderBox {
+  background-color: white;
+  padding: 4px;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: row;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-column-gap: 10px; /* Optional: adjust as per need */
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.graphHeaderBox .keyBlockSub {
+  flex-direction: row;
+  font-size: 12px;
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+
+.graphHeaderBox .keyBlockYes {
+  min-width: 16px;
+  max-width: 16px;
+  margin-right: 5px;
+}
+
+.bodyContentSubhead {
+  margin-top: 10px;
+  font-size: 64px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  line-height: 68px;
+}
+
+.keyBlockSubhead {
+  font-size: 14px;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+}
+
+
+.graphHeaderBox {
+  background-color: #f5f5f5;
+  padding: 4px;
+  border: 1px solid #333;
+  flex-direction: row;
+  display: grid;
+  grid-template-columns: 30% 60%;
+  grid-column-gap: 10px; /* Optional: adjust as per need */
+  padding-top: 10px;
+  padding-left: 10px;
+  border-bottom: 0px;
+}
+
+/* add in the media query for desktop */
+@media only screen and (max-width: 768px) {
+.graphHeaderBox {
+  display: block;
+}
+}
+
+.graphHeaderBox .keyBlockSub {
+  flex-direction: row;
+  font-size: 12px;
+  margin-bottom: 10px;
+  line-height: 12px;
+}
+
+.graphHeaderBox .keyBlockYes {
+  min-width: 12px;
+  max-width: 12px;
+  margin-right: 5px;
+}
+
+.modalContent {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.modalContent img{
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+#sidePanelButton {
+  background-color: white;
+  border: 1px solid #333;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* come up with a hover content*/
+#sidePanelButton:hover {
+  background-color: #7d1c1c;
+  color: white;
+  cursor: pointer;
+}
+
+#sidePanelButton::before {
+    content: '';  /* Set empty content */
+    display: inline-block;
+    margin-right: 5px;
+    width: 13px;
+    height: 13px;
+    margin-left: 1px;
+    margin-top: 4px;
+    background-image: url('data/chart.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#downloadButton1::before {
+    content: '';  /* Set empty content */
+    display: inline-block;
+    margin-right: 5px;
+    width: 13px;
+    height: 13px;
+    margin-left: 1px;
+    margin-top: 4px;
+    background-image: url('data/download.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#assessmentCheckbox {
+  font-size: 13px;
+  line-height: 14px;
+  font-family: "PT Sans", sans-serif;
+}
+#assessmentCheckbox input {
+  min-height: auto;
+  margin-right: 3px;
+}
+
+#assessmentCheckbox label {
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+button {
+    background-color: white;
+    border: 1px solid #333;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0 auto;
+    cursor: pointer;
+    font-family: "PT Sans", sans-serif;
+}  
+
+button:hover {
+  transform: translate(1px, 1px);
+  color: white;
+  background-color: #7D1B1D;
+}
+
+#searchBarResultsContaisuner + div {
+    flex-wrap: wrap;
+}
+
+#clearSelections {
+  background-color: #333 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+#clearSelections:hover {
+  background-color: #6e7070 !important;
+}
+
+#clearSelections::before {
+  background-color: white;
+}
+
+.hiddenXAxis g {
+  opacity: 0;
+}
+
+.windows-os #tableContent::-webkit-scrollbar {
+    width: 0; /* for Chrome, Safari, etc. */
+    background: transparent; /* for Safari */
+}
+
+.windows-os #tableContent {
+    scrollbar-width: none; /* for Firefox */
+}

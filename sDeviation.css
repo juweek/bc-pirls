@@ -1,0 +1,44 @@
+.keyBlock {
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.keyBlockSub {
+  margin-top: 0px;
+  flex-direction: column-reverse;
+  text-align: left;
+  line-height: 18px;
+}
+
+.keyBlockYes {
+  width: 100px;
+  margin-right: 0px;
+}
+
+.keyBlockSub {
+  margin-right: 0px;
+}
+
+
+:root {
+  --nav-height: 60px;
+}
+
+/* add in the media query for desktop */
+@media only screen and (min-width: 768px) {
+  .graphHeaderBox {
+      grid-template-columns: 30% 60%;
+  }
+}
+
+/* add in the media query for desktop */
+@media only screen and (min-width: 1068px) {
+ .graphHeaderBox {
+      grid-template-columns: 32.5% 57.5%;
+  }
+}
+
+.graphHeaderBox .keyBlockSub {
+  padding-right: 4px;
+}

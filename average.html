@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="lineGraph.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="bodyContent">
+    <h2>Percentage of Students Reaching Internetational Benchmarks</h2>
+    <h3>Created by the <a href="https://timssandpirls.bc.edu/">Boston College TIMSS & PIRLS</a> team</h3>
+    <p>The TIMSS achievement scale was established in 1995 based on the combined achievement distribution of all
+      countries that participated in TIMSS 1995. To provide a point of reference for country
+      comparisons, the scale centerpoint of 500 was located at the mean of the combined achievement distribution. The
+      units of the scale were chosen so that 100 scale score points corresponded to the standard
+      deviation of the distribution.</p>
+    <p>Ψ Reservations about reliability because the percentage of students with achievement too low for estimation
+      exceeds 15% but does not exceed 25%.
+      See Appendix B.2 for population coverage notes 1, 2, and 3. See Appendix B.5 for sampling guidelines and sampling
+      participation notes †, ‡, and ≡.
+      ( ) Standard errors appear in parentheses. Because of rounding some results may appear inconsistent.</p>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+
+    <div class="formsContainer">
+      <!-- Create the a dropdown menu that will allow you to select certain countries -->
+      <div id="searchBarSelectorContainer">
+        <input id="searchBarSelector" type="text" name="search" placeholder="Search for a country" />
+        <!-- Results container -->
+        <div id="resultsSelector"></div>
+      </div>
+      <!-- Create the a dropdown menu that will allow you to select certain countries -->
+      <div id="searchBarResultsContainer">
+        <div id="searchBarResults"></div>
+      </div>
+      <!-- Create a text search field that will be used to filter the graph 
+    <form action="index.html" method="GET">
+      <input id="searchBar" type="text" name="search" placeholder="Search for a country" />
+    </form>
+     -->
+      <!-- Create a 'Sort By' dropdown that will be used to sort the graph -->
+      <select id="sortDropdown" class="dropdownMenu" placeholder="Search for country" name="sortBy">
+        <option value="country">Sort By: Name (Alphabetical)</option>
+        <option selected value="2006">Sort By: 2006</option>
+        <option value="2011">Sort By: 2011</option>
+        <option value="2016">Sort By: 2016</option>
+        <option value="2021">Sort By: 2021</option>
+      </select>
+      <!-- Create a 'Sort Order' dropdown that will be used to sort the graph -->
+      <select id="orderDropdown" class="dropdownMenu" name="sortOrder">
+        <option value="asc">Low to High</option>
+        <option value="desc">High to Low</option>
+      </select>
+      <!-- Create the key for the graph below -->
+
+    </div>
+
+    <!-- Create a graph container that will be used to place the graph -->
+
+    <!-- Create a div where the graph will take place -->
+    <div id="graphContainer">
+    </div>
+    <div id="svganchor" class="graphic" role="img" class="graph centered">
+    </div>
+
+    <!-- Create a tooltip that will appear on the hover of certain elements -->
+    <div id="tooltip" class="tooltip">
+    </div>
+  </div>
+  </div>
+
+  <script src="average.js"></script>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+</body>
+
+</html>

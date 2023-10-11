@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="sDeviation.css" rel="stylesheet" type="text/css" />
+  <link href="navbar.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="sideNav">
+  <nav id="nav">
+    <ul>
+      <li><a href="https://html-css-js.jadesign.repl.co/standardDeviationSideNav.html" class="active">Countries’ Reading
+          Achievement (1.3)</a>
+      </li>
+      <li><a href="https://html-css-js.jadesign.repl.co/lineGraphSideNav.html">Trends in Reading Achievement (2.1-2.2)</a></li>
+      <li><a href="https://html-css-js.jadesign.repl.co/genderGapSideNav.html">Trends in Reading Achievement by Gender
+          (2.3-2.4)</a></li>
+      <li><a href="https://html-css-js.jadesign.repl.co/indexSideNav.html">International Benchmarks (4.2)</a></li>
+    </ul>
+  </nav>
+  <div id="placeholder" style="display: none;"></div>
+  <div class="bodyContent">
+    <div class="bodyContentIntro">
+      <h2>PIRLS 2021</h2>
+      <h3 class="bodyContentSubhead">Countries’ Average Reading Achievement</h3>
+      <h3>Created by the <a href="https://timssandpirls.bc.edu/">Boston College TIMSS & PIRLS</a> team</h3>
+      <p>The PIRLS achievement scale was established in 2001 based on the combined achievement distribution of all
+        countries that participated in PIRLS 2001. To provide a point of reference for country comparisons, the scale
+        centerpoint of 500 was located at the mean of the combined achievement distribution. The units of the scale
+        were
+        chosen so that 100 scale score points corresponded to the standard deviation of the distribution.</p>
+      <!-- Load d3.js -->
+      <h3 id="graphTitle" class="graphTitle"><b>Exhibit 1.3: Average Reading Achievement and Scale Score
+          Distribution</b></h3>
+      <script src="https://d3js.org/d3.v4.js"></script>
+
+      <!-- Create a graph container that will be used to place the graph -->
+      <!-- Create a div where the graph will take place -->
+      <p class="graphSubtitle"></p>
+
+      <div class="modalContentGroup">
+        <div class="modalContent">
+          <img src="https://html-css-js.jadesign.repl.co/data/svg_key.svg" alt="SVG Image">
+        </div>
+        <button id="sidePanelButton">Show Numerical Results</button>
+        <button id="downloadButton1">Download Graph as PNG</button>
+
+        <div class="modal__text graphHeaderBox">
+          <div style="border-right: 1px dashed #333;">
+            <div class="keyBlockSubhead"></div>
+            <div class="keyBlockSub">
+              <div>Assessed Fourth Grade Students at the End of the School Year</div>
+            </div>
+            <div class="keyBlockSub">
+              <div>⋈ Assessed One Year Later Than Originally Scheduled</div>
+            </div>
+            <div class="keyBlockSub">
+              <div class="keyBlockYes" style="background-color: #E9CBCC; border: 1px solid #b39595;"></div>
+              <div>Delayed Assessment of Fourth Grade Cohort at the Beginning of Fifth Grade</div>
+            </div>
+          </div>
+          <div class="formsContainer">
+            <div id="searchBarSelectorContainer">
+              <input id="searchBarSelector" type="text" name="search" placeholder="Search for a country"
+                autocomplete="off" />
+              <!-- Results container -->
+              <div id="resultsSelector"></div>
+            </div>
+            <!-- Create the a dropdown menu that will allow you to select certain countries -->
+            <div id="searchBarResultsContaisuner">
+              <div id="searchBarResults"></div>
+            </div>
+
+            <div style="display: flex;">
+              <!-- Create a 'Sort By' dropdown that will be used to sort the graph -->
+              <select id="sortDropdown" class="dropdownMenu" placeholder="Search for country" name="sortBy">
+                                <option selected value="average">Sort By: Average Scale Score</option>
+                <option value="Country">Sort By: Country Name (Alphabetical)
+                </option>
+                <option value="fifth_percentile">Sort By: 5th Percentile</option>
+                <option value="twentyfitfh_percentile">Sort By: 25th Percentile</option>
+                <option value="seventyfifth">Sort By: 75th Percentile</option>
+                <option value="ninteyfifth">Sort By: 95th Percentile</option>
+              </select>
+              <!-- Create a 'Sort Order' dropdown that will be used to sort the graph -->
+              <select id="orderDropdown" class="dropdownMenu" name="sortOrder">
+                <option value="asc">Lowest first</option>
+                <option selected value="desc">Highest first</option>
+              </select>
+            </div>
+            <!-- Create the delayed assessment checkboxes -->
+            <div id="assessmentCheckbox" style="display: flex;">
+              <input type="checkbox" id="option1" name="option1" value="Option1" checked>
+              <label for="option1"> Assessed at end of Fourth Grade</label><br>
+
+              <input type="checkbox" id="option2" name="option2" value="Option2" checked>
+              <label for="option2"> Delayed Assessment at Beginning of Fifth Grade
+              </label><br>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Create a div where the graph will take place -->
+      <div id="graphContainer">
+        <div id="my_dataviz"></div>
+        <div id="datavizCopy">
+          <div id="tableHeader">
+            <div class="tableCountry">
+              <p>Country</p>
+              <p>Average <br />Scale Score</p>
+              <p>5th <br />Percentile</p>
+              <p>25th Percentile</p>
+              <p>95% Confidence Interval (±2SE)</p>
+              <p>75th Percentile</p>
+              <p>95th Percentile</p>
+            </div>
+          </div>
+          <div id="tableContent">
+            <div id="columnTitles">
+              <!-- Your column titles here -->
+            </div>
+            <div id="dataContainer">
+              <!-- Your data will be appended here -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg id="xAxisDiv" style="width: 100%">
+      </svg>
+    </div>
+
+    <!-- Create a tooltip that will appear on the hover of certain elements -->
+    <div id="tooltip" class="tooltip">
+    </div>
+  </div>
+  </div>
+  <script type="module" src="https://html-css-js.jadesign.repl.co/sDeviation.js"></script>
+  <!-- call forth the plotly javascript library -->
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+</body>
+
+</html>

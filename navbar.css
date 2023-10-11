@@ -1,0 +1,113 @@
+:root {
+  --nav-height: 60px;
+}
+
+nav {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: 'PT Sans', sans-serif;
+  height: 100%; /* Set nav height to 100% of viewport height */
+  overflow: hidden; /* Prevent nav from scrolling */
+  position: relative;
+  box-sizing: border-box; /* new addition */
+  border-right: 2px dashed #333;
+}
+
+/* add in the media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  nav {
+    height: min-content;
+    border-right: none;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+  height: var(--nav-height);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  top: 20%;
+  margin-left: 10px;
+}
+
+/* add in the media query for smaller screens */
+@media only screen and (max-width: 768px) {
+nav ul {
+    position: relative;
+    top: 0;
+    height: min-content;
+  }
+}
+
+li {
+  flex: 1;
+  margin: 0 8px;
+  text-align: center;
+  height: var(--nav-height);
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.5; /* Adjusts line-height for more <p> tag-like appearance */
+  padding: 5px;
+  display: block;
+  text-align: right;
+  margin-bottom: 30px;
+  padding-right: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+  font-size: 14px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+nav a.active {
+  background-color: #F0F2F5;
+  color: #c70000;
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  nav {
+    flex-direction: column;
+  }
+  
+  ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  li {
+    margin: 5px;
+    flex: auto;
+    height: auto;
+  }
+  
+  nav a {
+    height: auto;
+    margin-bottom: 0px;
+    text-align: left;
+  }
+}
+
+#placeholder {
+  grid-column: 1; /* Place it in the same grid column as the nav */
+}
