@@ -5,8 +5,8 @@ The project is the code used for the [2021 PIRLS interactive dashboards](https:/
 There are four main groups of files: a pair of two files (one HTML, one JS). This corresponds to one pairing for Exhibit.
 
 ## Video Tutorials:
-[Link 1](https://www.loom.com/share/7041f752ce5a450ba7bb4ae7facf2cfb?sid=a487827a-140f-4b0c-b015-629c7c246253)
-[Link 2](https://www.loom.com/share/3ad829880b364b689a5730666b6f632f?sid=19bd37e4-6b2e-4d89-a6de-2ab4c21e9d83)
+- [Part 1](https://www.loom.com/share/7041f752ce5a450ba7bb4ae7facf2cfb?sid=a487827a-140f-4b0c-b015-629c7c246253)
+- [Part 2](https://www.loom.com/share/3ad829880b364b689a5730666b6f632f?sid=19bd37e4-6b2e-4d89-a6de-2ab4c21e9d83)
 
 
 ## Code Organization:
