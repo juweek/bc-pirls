@@ -4,35 +4,49 @@ The project is the code used for the [2021 PIRLS interactive dashboards](https:/
 
 There are four main groups of files: a pair of two files (one HTML, one JS). This corresponds to one pairing for Exhibit.
 
+
 ## Code Organization:
 
 - **Exhibit 1.3:** 
-![](https://github.com/juweek/bc-pirls/blob/main/images/documentation_1_3.png)
 This is a collection of overlapped rectangles, forming a test score distribution. The scores are divided by gender. The data can be found in [standardDeviation2.csv](https://github.com/juweek/bc-pirls/blob/main/data/standardDeviation2.csv), and the columns directly correlate to the beginning and end of the different distribution thresholds. Read more about the project if confused. 
   - [standardDeviation.html](https://github.com/juweek/bc-pirls/blob/main/standardDeviation.html)
   - [standardDeviationSideNav.html](https://github.com/juweek/bc-pirls/blob/main/standardDeviationSideNav.html)
   - [standardDeviation.js](https://github.com/juweek/bc-pirls/blob/main/standardDeviation.js)
 
+  ![](https://github.com/juweek/bc-pirls/blob/main/images/documentation_1_3.png)
+
+***
+
+
 - **Exhibit 4.2:** 
-![](https://github.com/juweek/bc-pirls/blob/main/images/documentation_4_2.png)
 This is a collection of lollipop graphs. The data can be found in [percentages.csv](https://github.com/juweek/bc-pirls/blob/main/data/percentages.csv), and the columns directly correlate to the postion of the advanced, intermediate, high, and low test scores. 
   - [index.html](https://github.com/juweek/bc-pirls/blob/main/index.html)
   - [indexSideNav.html](https://github.com/juweek/bc-pirls/blob/main/indexSideNav.html)
   - [script.js](https://github.com/juweek/bc-pirls/blob/main/script.js)
 
+![](https://github.com/juweek/bc-pirls/blob/main/images/documentation_4_2.png)
+
+***
+
+
 - **Exhibit 2.1/ 2.2:** 
-![](https://github.com/juweek/bc-pirls/blob/main/images/documentation_2_1.png)
 This is a collection of line graphs, one for each country that shows the test scores since 2001. The data can be found in [averageAchievement.csv](https://github.com/juweek/bc-pirls/blob/main/data/averageAchievement.csv), and the columns directly correlate to the postion of the line graph at a certain year.
   - [lineGraph.html](https://github.com/juweek/bc-pirls/blob/main/lineGraph.html)
   - [lineGraphSideNav.html](https://github.com/juweek/bc-pirls/blob/main/lineGraphSideNav.html)
   - [lineGraph.js](https://github.com/juweek/bc-pirls/blob/main/lineGraph.js)
 
+![](https://github.com/juweek/bc-pirls/blob/main/images/documentation_2_1.png)
+
+***
+
 - **Exhibit 2.3/ 2.4:** 
-![](https://github.com/juweek/bc-pirls/blob/main/images/documentation_2_3.png)
 Similar to 2.1/2.2, this is a collection of line graphs, two for each country that shows the test scores since 2001. The scores are divided by gender. The data can be found in [gender.csv](https://github.com/juweek/bc-pirls/blob/main/data/gender.csv), and the columns directly correlate to the postion of the line graph at a certain year.
   - [genderGap.html](https://github.com/juweek/bc-pirls/blob/main/genderGap.html)
   - [genderGapSideNav.html](https://github.com/juweek/bc-pirls/blob/main/genderGapSideNav.html)
   - [genderGap.js](https://github.com/juweek/bc-pirls/blob/main/genderGap.js)
+
+  ![](https://github.com/juweek/bc-pirls/blob/main/images/documentation_2_3.png)
+
 
 ## Shared Files:
 
@@ -53,6 +67,7 @@ In addition to the aforementioned files, each of the four main groups relies on:
 
 - A CSV file:
   - Linked in each pair’s JS file
+
 
 ## Basic Code Algorithm:
 
