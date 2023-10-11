@@ -11,7 +11,7 @@ There are four main groups of files: a pair of two files (one HTML, one JS). Thi
 This is a collection of overlapped rectangles, forming a test score distribution. The scores are divided by gender. The data can be found in [standardDeviation2.csv](https://github.com/juweek/bc-pirls/blob/main/data/standardDeviation2.csv), and the columns directly correlate to the beginning and end of the different distribution thresholds. Read more about the project if confused. 
   - [standardDeviation.html](https://github.com/juweek/bc-pirls/blob/main/standardDeviation.html)
   - [standardDeviationSideNav.html](https://github.com/juweek/bc-pirls/blob/main/standardDeviationSideNav.html)
-  - [standardDeviation.js](https://github.com/juweek/bc-pirls/blob/main/standardDeviation.js)
+  - [standardDeviation.js](https://github.com/juweek/bc-pirls/blob/main/sDeviation.js)
 
   ![](https://github.com/juweek/bc-pirls/blob/main/images/documentation_1_3.png)
 
