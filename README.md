@@ -4,6 +4,10 @@ The project is the code used for the [2021 PIRLS interactive dashboards](https:/
 
 There are four main groups of files: a pair of two files (one HTML, one JS). This corresponds to one pairing for Exhibit.
 
+## Video Tutorials:
+[Link 1](https://www.loom.com/share/7041f752ce5a450ba7bb4ae7facf2cfb?sid=a487827a-140f-4b0c-b015-629c7c246253)
+[Link 2](https://www.loom.com/share/3ad829880b364b689a5730666b6f632f?sid=19bd37e4-6b2e-4d89-a6de-2ab4c21e9d83)
+
 
 ## Code Organization:
 
@@ -12,6 +16,7 @@ This is a collection of overlapped rectangles, forming a test score distribution
   - [standardDeviation.html](https://github.com/juweek/bc-pirls/blob/main/standardDeviation.html)
   - [standardDeviationSideNav.html](https://github.com/juweek/bc-pirls/blob/main/standardDeviationSideNav.html)
   - [standardDeviation.js](https://github.com/juweek/bc-pirls/blob/main/sDeviation.js)
+  - [Exhibit 1.3 ReadMe](https://github.com/juweek/bc-pirls/blob/main/documentation/exhibit1_3.md)
 
   ![](https://github.com/juweek/bc-pirls/blob/main/images/documentation_1_3.png)
 
@@ -23,6 +28,7 @@ This is a collection of lollipop graphs. The data can be found in [percentages.c
   - [index.html](https://github.com/juweek/bc-pirls/blob/main/index.html)
   - [indexSideNav.html](https://github.com/juweek/bc-pirls/blob/main/indexSideNav.html)
   - [script.js](https://github.com/juweek/bc-pirls/blob/main/script.js)
+  - [Exhibit 4.2 ReadMe](https://github.com/juweek/bc-pirls/blob/main/documentation/exhibit4_2.md)
 
 ![](https://github.com/juweek/bc-pirls/blob/main/images/documentation_4_2.png)
 
